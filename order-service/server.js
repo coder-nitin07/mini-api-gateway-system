@@ -11,8 +11,11 @@ app.get("/health", (req, res) => {
 
 // routes
 app.get("/my", (req, res) => {
+  const userId = req.headers["x-user-id"];
+
   res.json({
-    message: "Orders from order-service"
+    message: "Orders from order-service",
+    userId
   });
 });
 
